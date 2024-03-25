@@ -1,3 +1,15 @@
+def freq_counter(num):
+    """Creates a dictionary with frequencies of digits
+       within a number
+    """
+    counter = {}
+    
+    for digit in str(num):
+        counter[digit] = counter.get(digit, 0) + 1
+    
+    return counter
+        
+
 def same_frequency(num1, num2):
     """Do these nums have same frequencies of digits?
     
@@ -10,3 +22,5 @@ def same_frequency(num1, num2):
         >>> same_frequency(1212, 2211)
         True
     """
+    return freq_counter(num1) == freq_counter(num2)
+   

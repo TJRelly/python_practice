@@ -13,3 +13,16 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    counter = {}
+    
+    for num in nums:
+        counter[num] = counter.get(num, 0) + 1
+        
+    return k for k, v in counter.items():
+        if v > 1:
+            return k
+        
+    
+    
+    
+    
